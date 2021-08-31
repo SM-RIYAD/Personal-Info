@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".MainActivity"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/relative_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+
+        <EditText
+            android:id="@+id/edit_text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toStartOf="@id/button_insert"
+            android:layout_weight="80"
+            android:background="#FFFFFF"
+            android:drawableStart="@drawable/pencil"
+            android:drawablePadding="10dp"
+            android:hint="@string/enter_name"
+
+
+            android:inputType="text"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/button_insert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:gravity="end"
+            android:text="@string/insert"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+
+            />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/about_you"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="11dp"
+
+            android:layout_marginEnd="11dp"
+            android:layout_marginBottom="11dp"
+            android:text="@string/about_you"
+            android:textColor="@color/purple_700"
+            android:textSize="40sp"
+
+            />
+
+        <TextView
+            android:id="@+id/riyad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/about_you"
+            android:layout_centerHorizontal="true"
+            android:text="@string/made_by_riyad"
+            android:textColor="@color/teal_200" />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:animateLayoutChanges="true"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:background="@color/teal_200"
+                android:text="@string/name"
+                android:textColor="#010310"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/text_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:background="@color/teal_200"
+                android:text="@string/age"
+                android:textColor="#010310"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/text_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:background="@color/teal_200"
+                android:text="@string/location"
+                android:textColor="#010310"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/text_hobby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:background="@color/teal_200"
+                android:text="@string/hobby"
+                android:textColor="#010310"
+                android:textSize="22sp" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

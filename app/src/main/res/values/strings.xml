@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="insert">Insert</string>
+    <string name="location">Location</string>
+    <string name="hobby">Hobby</string>
+    <string name="about_you">About you</string>
+    <string name="made_by_riyad">Made by Riyad</string>
+    <string name="enter_name">Enter Name</string>
+</resources>
