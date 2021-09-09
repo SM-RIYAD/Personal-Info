@@ -12,6 +12,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.classes.WidgetController;
+
 import java.text.MessageFormat;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -36,86 +38,36 @@ private RelativeLayout relative_input;
    cardView1 =findViewById(R.id.cardview1);
    cardReset =findViewById(R.id.card_reset);
    relative_input=findViewById(R.id.relative_input);
-   setVisibilityToGone();
+        WidgetController   widgetController = new WidgetController(  button_insert,
+                 text_name,
+                 text_age,
+                text_hobby,
+                 text_location,
+                 cardView1,  cardReset,
+                 editText1, relative_input);
+        widgetController.setVisibilityToGone();
    cardReset.setOnClickListener(this);
    button_insert.setOnClickListener(this);
     }
-
-    private void setVisibilityToGone() {
-        text_name.setVisibility(View.GONE);
-        text_age.setVisibility(View.GONE);
-        text_location.setVisibility(View.GONE);
-
-        text_hobby.setVisibility(View.GONE);
-
-        cardView1.setVisibility(View.GONE);
-    }
-
     @Override
     public void onClick(View v) {
-
         if(v==button_insert){
-
-            if(editText1.getText().toString().isEmpty()){
-                Toast.makeText(getApplicationContext(), "Field can't be empty!", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            cardView1.setVisibility(View.VISIBLE);
-            if (text_name.getVisibility() == View.GONE) {
-                ///text_name.setText(editText1.getText().toString());
-                text_name.setText(MessageFormat.format("My name is {0}", editText1.getText().toString()));
-                editText1.setText("");
-                text_name.setVisibility(View.VISIBLE);
-                editText1.setInputType(InputType.TYPE_CLASS_NUMBER);
-                editText1.setHint("Enter age.");
-                return;
-            }
-
-            if (text_age.getVisibility() == View.GONE) {
-                text_age.setVisibility(View.VISIBLE);
-                text_age.setText(MessageFormat.format("I am {0} years old", editText1.getText().toString()));
-                editText1.setText("");
-                text_age.setVisibility(View.VISIBLE);
-                editText1.setInputType(InputType.TYPE_CLASS_TEXT);
-                editText1.setHint("Enter location.");
-                return;
-            }
-
-
-            if(text_location.getVisibility()==View.GONE){
-                text_location.setVisibility(View.VISIBLE);
-                text_location.setText(MessageFormat.format("I live in {0}", editText1.getText().toString()));
-                editText1.setText("");
-                text_location.setVisibility(View.VISIBLE);
-                editText1.setInputType(InputType.TYPE_CLASS_TEXT);
-                editText1.setHint("Enter hobby.");
-                return;
-
-            }
-            if (text_hobby.getVisibility() == View.GONE) {
-                text_hobby.setVisibility(View.VISIBLE);
-
-                text_hobby.setText(MessageFormat.format("I love {0}", editText1.getText().toString()));
-                editText1.setText("");
-
-
-                editText1.setHint("Enter name.");
-                relative_input.setVisibility(View.GONE);
-                cardReset.setVisibility(View.VISIBLE);
-            }
-
-
-
+            new WidgetController(button_insert,
+                    text_name,
+                    text_age,
+                    text_hobby,
+                    text_location,
+                    cardView1,  cardReset,
+                    editText1, relative_input).setFunctionForButton_Insert();
         }
         if(v==cardReset){
-
-            setVisibilityToGone();
-            editText1.setText("");
-            editText1.setInputType(InputType.TYPE_CLASS_TEXT);
-            editText1.setHint("Enter name.");
-            cardReset.setVisibility(View.GONE);
-            relative_input.setVisibility(View.VISIBLE);
-
+            new WidgetController(button_insert,
+                    text_name,
+                    text_age,
+                    text_hobby,
+                    text_location,
+                    cardView1,  cardReset,
+                    editText1, relative_input).setFunctionForReset_button();
         }
 
     }
